@@ -1,7 +1,7 @@
 {
     "addonsTab": {
         "CR12711_TS_04": {
-            "icoms_acc_nbr": "18577507",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
@@ -12,7 +12,7 @@
             "dicount": ""
         },
         "TS_19_RETOUT": {
-            "icoms_acc_nbr": "912639109",
+            "icoms_acc_nbr": "XXX",
             "site_id": "9",
             "target_site_id": "",
             "target_premise_id": "",
@@ -34,7 +34,7 @@
             "prompt": " Intelligent WiFi Pods are designed to improve your overall in-home WiFi reliability and eliminate any WiFi blackspots. All you need to do is plug them into a wall socket halfway between your Hub and the room you can't get any signal, wait for the LED to stop blinking and turn WiFi on your device off and back on again. If it doesn't improve your WiFi please try experimenting with other sockets  "
         },
         "recontracting_addon": {
-            "icoms_acc_nbr": "60793103",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
@@ -53,7 +53,7 @@
     },
     "prompt": {
         "v6_vtv_prompt": {
-            "icoms_acc_nbr": "829877301",
+            "icoms_acc_nbr": "XXX",
             "site_id": "18",
             "target_site_id": "",
             "target_premise_id": "",
@@ -69,10 +69,10 @@
             "prompttxt": " Customer Education!  V6 Upgrades to 360 - The customer will only receive new 360 remote controls with clear instructions on how to upgrade their existing V6 box to 360 (no new boxes are sent in this scenario). For accounts that are a mixed household i.e. V6 and TiVo/ legacy boxes - The Customer will only receive new 360 remote controls to upgrade their existing V6 box (no new boxes will be sent to replace the V6). TiVo / Legacy boxes on the account will be swapped to 360 mini boxes. Recording and series links cannot be transferred over to 360 and will be lost.  "
         },
         "Inbound_TC_23": {
-            "icoms_acc_nbr": "818015501",
+            "icoms_acc_nbr": "XXX",
             "site_id": "18",
             "target_site_id": "18",
-            "target_premise_id": "8237935",
+            "target_premise_id": "XXX",
             "rgus": [
                 "M/100/L/U",
                 "Maxit TV",
@@ -87,7 +87,7 @@
     },
     "custPanel": {
         "TS_11480_12": {
-            "icoms_acc_nbr": "103711806",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
@@ -99,7 +99,7 @@
             "connectedDevice": "6"
         },
         "tv2_cble_cntr_en_dte": {
-            "icoms_acc_nbr": "54303204",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
@@ -114,7 +114,7 @@
     },
   "AGC": {
         "CR12738_TS_122": {
-            "icoms_acc_nbr": "44875802",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "agc": "VMACN32",
             "agcText": [
@@ -124,10 +124,10 @@
             ]
         },
         "TS_12618_58": {
-            "icoms_acc_nbr": "803674601",
+            "icoms_acc_nbr": "XXX",
             "site_id": "18",
             "target_site_id": "18",
-            "target_premise_id": "8280513",
+            "target_premise_id": "XXX",
             "agc": "VMGUI35MT",
             "agcText": [
                 "Customer has shown an interest in Sky Sports; attempt X-sell to Sky Sports as part of move.",
@@ -140,7 +140,7 @@
     },
     "backbookSwaps": {
         "TC_CR521_01_CR521": {
-            "icoms_acc_nbr": "28174707",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
@@ -155,7 +155,7 @@
             "bundleStb": "Virgin TV 360 box"
         },
         "TC_CR9568_30": {
-            "icoms_acc_nbr": "52611601",
+            "icoms_acc_nbr": "XXX",
             "site_id": "12",
             "target_site_id": "",
             "target_premise_id": "",
