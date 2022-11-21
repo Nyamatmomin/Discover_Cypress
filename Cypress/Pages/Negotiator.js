@@ -1,55 +1,261 @@
 const questData = require("../fixtures/installQue.json")
 import AcceptConfirm from "../Pages/AcceptConfirm.js"
-class Negotiator {    constructor() {
+class Negotiator {
+    constructor() {
 
-        this.agcTitle = "div[node_name='OfferAssessmentSection'] > div > div > div > div > div > div > table > tbody > tr > td > div > div > div[section_index='1'] > div > div:nth-child(1) > div > div > span"        this.agcBody = "div[node_name='OfferAssessmentSection'] > div > div > div > div > div > div > table > tbody > tr > td > div > div > div[section_index='2']  > div > div > div > div > span"
 
-        this.bbType = "select[name$='BroadbandType']";        this.tvType = "select[name$='TVType']";        this.telType = "select[name$='PhoneType']";        this.contract = "select[name$='ContractType']";        this.simType = "select[name$='SIMAddon']";        this.searchOffers = "button[name^=SearchOffers]";
 
-        this.allBundles = "div[id $= BundleComparisonListALL]> div > div.lvTableContainer > table > tbody > tr[rowindex]";        this.allPrompts = "div[class$='prompt_message'] > div > table > tbody > tr > td:nth-child(2) > span";
+       this.agcTitle = "div[node_name='OfferAssessmentSection'] > div > div > div > div > div > div > table > tbody > tr > td > div > div > div[section_index='1'] > div > div:nth-child(1) > div > div > span"
+        this.agcBody = "div[node_name='OfferAssessmentSection'] > div > div > div > div > div > div > table > tbody > tr > td > div > div > div[section_index='2']  > div > div > div > div > span"
 
-        this.basket = "div[datasource='DEMHandler.Basket.SelectedPropositionList_BundleDetailList_3']";        this.popup = "er local-action'] > div > div:nth-child(1) > table:nth-child(2)"    }
 
-    getIframeDocument() {        return cy            .get('#PegaGadget0Ifr')            .its('0.contentDocument')    }
 
-    getIframeBody() {        return this.getIframeDocument()            .its('body')            .then(cy.wrap)    }
+       this.bbType = "select[name$='BroadbandType']";
+        this.tvType = "select[name$='TVType']";
+        this.telType = "select[name$='PhoneType']";
+        this.contract = "select[name$='ContractType']";
+        this.simType = "select[name$='SIMAddon']";
+        this.searchOffers = "button[name^=SearchOffers]";
 
-    selectRGUs(rgus) {        this.getIframeBody().find(this.bbType).select(rgus[0])        this.getIframeBody().find(this.tvType).select(rgus[1])        cy.wait(3000)        this.getIframeBody().find(this.telType).select(rgus[2])        this.getIframeBody().find(this.contract).select(rgus[3])        this.getIframeBody().find(this.simType).select(rgus[4])        this.getIframeBody().find(this.searchOffers).click()    }
 
-    selectBundle(bundleName, stbType) {
 
-        let bundles = []        if (bundleName.includes('Bigger bundle')) {            this.getIframeBody().find(this.allBundles).filter(":not('+')").each((bundle) => {                bundles.push(bundle)            }).then(() => {                for (let index = 0; index < bundles.length; index++) {                    if (bundles[index].text().includes(stbType)) {                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()                        cy.wait(1000).then(() => {                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()                        })
 
-                    }                }            })
+        this.allBundles = "div[id $= BundleComparisonListALL]> div > div.lvTableContainer > table > tbody > tr[rowindex]";
+        this.allPrompts = "div[class$='prompt_message'] > div > table > tbody > tr > td:nth-child(2) > span";
 
-        }        else if (bundleName.endsWith('Oomph')) {            this.getIframeBody().find(this.allBundles).each((bundle) => {                bundles.push(bundle)            }).then(() => {                for (let index = 0; index < bundles.length; index++) {                    if (bundles[index].text().includes(stbType)) {                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()                        cy.wait(1000).then(() => {                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()                        })
 
-                    } else {                        bundles[0].find("td:nth-child(2) > input[type=radio]").click()                        cy.wait(1000).then(() => {                            bundles[0].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()                        })                    }                }            })        } else {            this.getIframeBody().find(this.allBundles).filter(':contains(' + bundleName + ')').each((bundle) => {                bundles.push(bundle)            }).then(() => {                for (let index = 0; index < bundles.length; index++) {
 
-                    if (bundles[index].text().includes(stbType)) {                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()                        cy.wait(1000).then(() => {                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()                        })
+       this.basket = "div[datasource='DEMHandler.Basket.SelectedPropositionList_BundleDetailList_3']";
+        this.popup = "er local-action'] > div > div:nth-child(1) > table:nth-child(2)"
+    }
 
-                    } else {                        bundles[0].find("td:nth-child(2) > input[type=radio]").click()                        cy.wait(1000).then(() => {                            bundles[0].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()                        })                    }                }            })        }        cy.wait(3000)    }
 
-    checkPrompt(prompttxt) {
 
-        this.getIframeBody().find(this.allPrompts).each((prompt) => {            if (prompt.text().includes(prompttxt)) {                expect(prompt.text()).to.equal(prompttxt)            }        })    }
+   getIframeDocument() {
+        return cy
+            .get('#PegaGadget0Ifr')
+            .its('0.contentDocument')
+    }
 
-    assertAgc(agc, agcText) {
 
-        if (agc.includes('VMACN')) {            let agcArray = []            cy.wait(2000)            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']"))                .each((action) => {                    agcArray.push(action)                }).then(() => {                    this.checkAction(agcArray, agcText)                })            cy.wait(5000)            this.getIframeBody().find("button[data-ctl='Button']").should('not.contain.text', 'Go to Discover Negotiator')        } else {            let agcArray = []            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']"))                .each((action) => {                    agcArray.push(action)                }).then(() => {                    this.checkGuidance(agcArray, agcText)                })        }    }
 
-    checkAction(actionsArray, agcText) {        this.getIframeBody().should('not.contain.text', 'Go to Discover Negotiator')        for (let index = 0; index < actionsArray.length; index++) {            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()            this.getIframeBody().find(this.agcTitle).then((title) => {                if (title.text().includes(agcText[0])) {                    let titletxt = title.text()                    expect(titletxt).to.equal(agcText[0])                    this.getIframeBody().find(this.agcBody).then((steps) => {                        if (steps.text().includes(agcText[1])) {                            let stepsTxt = steps.text()                            expect(stepsTxt).to.equal(agcText[1])                            this.getIframeBody().find("button[data-ctl='Button']").should('contain.text', agcText[2])                        } else {                            cy.wait(5000)                            this.getIframeBody().find("button[data-ctl='Button']").click()                            cy.wait(5000)                        }                    })                } else {                    cy.wait(5000)                    this.getIframeBody().find("button[data-ctl='Button']").click()                    cy.wait(5000)                }            })        }    }
+   getIframeBody() {
+        return this.getIframeDocument()
+            .its('body')
+            .then(cy.wrap)
+    }
 
-    checkGuidance(agcArray, agcText) {        this.getIframeBody().should('contain.text', 'Go to Discover Negotiator')
 
-        for (let index = 0; index < agcArray.length; index++) {            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()            this.getIframeBody().find(this.agcTitle).then((title) => {                if (title.text().includes(agcText[0])) {                    let titletxt = title.text()                    expect(titletxt).to.equal(agcText[0])                    this.getIframeBody().find(this.agcBody).then((steps) => {                        if (steps.text().includes(agcText[1])) {                            let stepsTxt = steps.text()                            expect(stepsTxt).to.equal(agcText[1])                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_1']").should('contain.text', agcText[2])                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_2']").should('contain.text', agcText[3])                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_3']").should('contain.text', agcText[4])
 
-                        } else {                            this.getIframeBody().find("button[data-ctl='Button']").each((button) => {                                this.moveToNextAgc(button)                            })                        }                    })                } else {                    this.getIframeBody().find("button[data-ctl='Button']").each((button) => {                        this.moveToNextAgc(button)                    })                }            })        }
 
-    }
+    selectRGUs(rgus) {
+        this.getIframeBody().find(this.bbType).select(rgus[0])
+        this.getIframeBody().find(this.tvType).select(rgus[1])
+        cy.wait(3000)
+        this.getIframeBody().find(this.telType).select(rgus[2])
+        this.getIframeBody().find(this.contract).select(rgus[3])
+        this.getIframeBody().find(this.simType).select(rgus[4])
+        this.getIframeBody().find(this.searchOffers).click()
+    }
 
-    moveToNextAgc(button) {        if (button.text().includes('Acknowledged')) {            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_11']").click()            cy.wait(5000)        } else if (button.text().includes('No Thanks')) {            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_2']").click()            cy.wait(5000)        }    
 
+
+
+    selectBundle(bundleName, stbType) {
+
+
+
+       let bundles = []
+        if (bundleName.includes('Bigger bundle')) {
+            this.getIframeBody().find(this.allBundles).filter(":not('+')").each((bundle) => {
+                bundles.push(bundle)
+            }).then(() => {
+                for (let index = 0; index < bundles.length; index++) {
+                    if (bundles[index].text().includes(stbType)) {
+                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()
+                        cy.wait(1000).then(() => {
+                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()
+                        })
+
+
+
+                   }
+                }
+            })
+
+
+
+       }
+        else if (bundleName.endsWith('Oomph')) {
+            this.getIframeBody().find(this.allBundles).each((bundle) => {
+                bundles.push(bundle)
+            }).then(() => {
+                for (let index = 0; index < bundles.length; index++) {
+                    if (bundles[index].text().includes(stbType)) {
+                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()
+                        cy.wait(1000).then(() => {
+                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()
+                        })
+
+
+
+                   } else {
+                        bundles[0].find("td:nth-child(2) > input[type=radio]").click()
+                        cy.wait(1000).then(() => {
+                            bundles[0].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()
+                        })
+                    }
+                }
+            })
+        } else {
+            this.getIframeBody().find(this.allBundles).filter(':contains(' + bundleName + ')').each((bundle) => {
+                bundles.push(bundle)
+            }).then(() => {
+                for (let index = 0; index < bundles.length; index++) {
+
+
+
+
+                    if (bundles[index].text().includes(stbType)) {
+                        bundles[index].find("td:nth-child(2) > input[type=radio]").click()
+                        cy.wait(1000).then(() => {
+                            bundles[index].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()
+                        })
+
+
+
+                   } else {
+                        bundles[0].find("td:nth-child(2) > input[type=radio]").click()
+                        cy.wait(1000).then(() => {
+                            bundles[0].find("td:nth-child(2) > input[pn$=pySingleSelection]").click()
+                        })
+                    }
+                }
+            })
+        }
+        cy.wait(3000)
+    }
+
+
+
+   checkPrompt(prompttxt) {
+
+
+
+       this.getIframeBody().find(this.allPrompts).each((prompt) => {
+            if (prompt.text().includes(prompttxt)) {
+                expect(prompt.text()).to.equal(prompttxt)
+            }
+        })
+    }
+ assertAgc(agc, agcText) {
+
+
+
+       if (agc.includes('VMACN')) {
+            let agcArray = []
+            cy.wait(2000)
+            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()
+            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']"))
+                .each((action) => {
+                    agcArray.push(action)
+                }).then(() => {
+                    this.checkAction(agcArray, agcText)
+                })
+            cy.wait(5000)
+            this.getIframeBody().find("button[data-ctl='Button']").should('not.contain.text', 'Go to Discover Negotiator')
+        } else {
+            let agcArray = []
+            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']"))
+                .each((action) => {
+                    agcArray.push(action)
+                }).then(() => {
+                    this.checkGuidance(agcArray, agcText)
+                })
+        }
+    }
+
+
+
+   checkAction(actionsArray, agcText) {
+        this.getIframeBody().should('not.contain.text', 'Go to Discover Negotiator')
+        for (let index = 0; index < actionsArray.length; index++) {
+            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()
+            this.getIframeBody().find(this.agcTitle).then((title) => {
+                if (title.text().includes(agcText[0])) {
+                    let titletxt = title.text()
+                    expect(titletxt).to.equal(agcText[0])
+                    this.getIframeBody().find(this.agcBody).then((steps) => {
+                        if (steps.text().includes(agcText[1])) {
+                            let stepsTxt = steps.text()
+                            expect(stepsTxt).to.equal(agcText[1])
+                            this.getIframeBody().find("button[data-ctl='Button']").should('contain.text', agcText[2])
+                        } else {
+                            cy.wait(5000)
+                            this.getIframeBody().find("button[data-ctl='Button']").click()
+                            cy.wait(5000)
+                        }
+                    })
+                } else {
+                    cy.wait(5000)
+                    this.getIframeBody().find("button[data-ctl='Button']").click()
+                    cy.wait(5000)
+                }
+            })
+        }
+    }
+
+
+
+   checkGuidance(agcArray, agcText) {
+        this.getIframeBody().should('contain.text', 'Go to Discover Negotiator')
+
+
+
+       for (let index = 0; index < agcArray.length; index++) {
+            this.getIframeBody().find(("a[onclick^='ChangeOfferAndRefreshDetails']")).first().click()
+            this.getIframeBody().find(this.agcTitle).then((title) => {
+                if (title.text().includes(agcText[0])) {
+                    let titletxt = title.text()
+                    expect(titletxt).to.equal(agcText[0])
+                    this.getIframeBody().find(this.agcBody).then((steps) => {
+                        if (steps.text().includes(agcText[1])) {
+                            let stepsTxt = steps.text()
+                            expect(stepsTxt).to.equal(agcText[1])
+                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_1']").should('contain.text', agcText[2])
+                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_2']").should('contain.text', agcText[3])
+                            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_3']").should('contain.text', agcText[4])
+
+
+
+                       } else {
+                            this.getIframeBody().find("button[data-ctl='Button']").each((button) => {
+                                this.moveToNextAgc(button)
+                            })
+                        }
+                    })
+                } else {
+                    this.getIframeBody().find("button[data-ctl='Button']").each((button) => {
+                        this.moveToNextAgc(button)
+                    })
+                }
+            })
+        }
+
+
+
+   }
+
+
+
+   moveToNextAgc(button) {
+        if (button.text().includes('Acknowledged')) {
+            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_11']").click()
+            cy.wait(5000)
+        } else if (button.text().includes('No Thanks')) {
+            this.getIframeBody().find("button[data-ctl='Button'][name$='pyWorkPage_2']").click()
+            cy.wait(5000)
+        }
   rm_inv_pro_and_val() {
 
 
