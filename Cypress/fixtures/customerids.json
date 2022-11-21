@@ -1,0 +1,31 @@
+{
+    "TS001" : {
+    "icoms_acc_nbr" : "XXX",
+    "site_id" : "12",
+    "target_site_id" : "",
+    "target_premise_id" : "",
+    "rgus" : ["V/350 (200-350)", "Maxit TV", "More Int'ntl A/time", "Fixed Offers", "None"],
+    "select_bundle" : "  Sports   and   Movies   ",
+    "bundleStb" : "Virgin TV 360 box",
+    "addon" : "",
+    "dicount": ""
+    },
+
+
+
+   "v6_vtv_prompt" : {
+        "icoms_acc_nbr" : "XXX",
+        "site_id" : "18",
+        "target_site_id" : "",
+        "target_premise_id" : "",
+        "rgus" : ["M/200/XL/U", "Maxit TV", "More Int'ntl A/time", "Fixed Offers", "None"],
+        "select_bundle" : "  Sports   SD    ",
+        "bundleStb" : "360",
+        "prompt" : ["Customer Education! ",
+                    "V6 Upgrades to 360 - The customer will only receive new 360 remote controls with clear instructions on how to upgrade their existing V6 box to 360 (no new boxes are sent in this scenario).",
+                    "For accounts that are a mixed household i.e. V6 and TiVo/ legacy boxes - The Customer will only receive new 360 remote controls to upgrade their existing V6 box (no new boxes will be sent to replace the V6). TiVo / Legacy boxes on the account will be swapped to 360 mini boxes.",
+                    "Recording and series links cannot be transferred over to 360 and will be lost..)"],
+        "addon" : "",
+        "dicount": ""
+    }
+}

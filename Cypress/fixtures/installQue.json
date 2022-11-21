@@ -1,0 +1,16 @@
+{
+"toCVQue" : {
+    "specialServices" : "Do you use a device or service such as a telehealth device, care alarm, fire alarm or security alarm that connects to your home phone line?",
+    "impairment" : "Do you, or anyone else in your household have an impairment which would make you vulnerable in the event of a power outage?",
+    "mobile" : "Do you have a mobile phone?"
+
+
+
+},
+
+
+
+"hdmi" : {
+    "qshdmi" : "The Set-Top Box added to the order requires HDMI to connect with TV. Does the TV due to be connected to the Virgin TV 360 box have HDMI inputs?"
+}
+}

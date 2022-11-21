@@ -1,0 +1,173 @@
+{
+    "addonsTab": {
+        "CR12711_TS_04": {
+            "icoms_acc_nbr": "18577507",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": "",
+            "select_bundle": "",
+            "bundleStb": "",
+            "addon": "HomeWorks",
+            "dicount": ""
+        },
+        "TS_19_RETOUT": {
+            "icoms_acc_nbr": "912639109",
+            "site_id": "9",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": [
+                "V/200 (100-200)",
+                "Maxit TV",
+                "More Int'ntl A/time",
+                "Fixed Offers",
+                "None"
+            ],
+            "select_bundle": "  Sports   and   Movies   ",
+            "bundleStb": "Virgin TV 360 box",
+            "addon": [
+                "O2 FULL Tracker",
+                "Intelligent WiFi Plus service",
+                "Intelligent WiFi Power Pod 1"
+            ],
+            "dicount": "",
+            "prompt": " Intelligent WiFi Pods are designed to improve your overall in-home WiFi reliability and eliminate any WiFi blackspots. All you need to do is plug them into a wall socket halfway between your Hub and the room you can't get any signal, wait for the LED to stop blinking and turn WiFi on your device off and back on again. If it doesn't improve your WiFi please try experimenting with other sockets  "
+        },
+        "recontracting_addon": {
+            "icoms_acc_nbr": "60793103",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": [
+                "M/350/U",
+                "Maxit TV",
+                "More Anytime",
+                "Fixed Offers",
+                "None"
+            ],
+            "select_bundle": "  Sports   and   Movies   ",
+            "bundleStb": "Virgin TV 360 box",
+            "addon": "12 Month Contract",
+            "dicount": ""
+        }
+    },
+    "prompt": {
+        "v6_vtv_prompt": {
+            "icoms_acc_nbr": "829877301",
+            "site_id": "18",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": [
+                "M/200/XL/U",
+                "Maxit TV",
+                "More Int'ntl A/time",
+                "Fixed Offers",
+                "None"
+            ],
+            "select_bundle": "  Sports   SD    ",
+            "bundleStb": "360",
+            "prompttxt": " Customer Education!  V6 Upgrades to 360 - The customer will only receive new 360 remote controls with clear instructions on how to upgrade their existing V6 box to 360 (no new boxes are sent in this scenario). For accounts that are a mixed household i.e. V6 and TiVo/ legacy boxes - The Customer will only receive new 360 remote controls to upgrade their existing V6 box (no new boxes will be sent to replace the V6). TiVo / Legacy boxes on the account will be swapped to 360 mini boxes. Recording and series links cannot be transferred over to 360 and will be lost.  "
+        },
+        "Inbound_TC_23": {
+            "icoms_acc_nbr": "818015501",
+            "site_id": "18",
+            "target_site_id": "18",
+            "target_premise_id": "8237935",
+            "rgus": [
+                "M/100/L/U",
+                "Maxit TV",
+                "More Anytime",
+                "Fixed Offers",
+                "None"
+            ],
+            "select_bundle": "  Bigger   bundle    ",
+            "bundleStb": "360",
+            "prompttxt": " Customer Education!  You have opted out of having an Emergency Back-Up device fitted as part of your installation. Without an EBUL you will not be able to make calls to 999 / 112 in the event of a power cut or network outage. You should ensure you have a charged and working mobile phone available at your premise at all times. If you wish to change your mind and would like to have an EBUL installed please let us know.  "
+        }
+    },
+    "custPanel": {
+        "TS_11480_12": {
+            "icoms_acc_nbr": "103711806",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": "",
+            "select_bundle": "",
+            "bundleStb": "",
+            "addon": "",
+            "dicount": "",
+            "connectedDevice": "6"
+        },
+        "tv2_cble_cntr_en_dte": {
+            "icoms_acc_nbr": "54303204",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": "",
+            "select_bundle": "",
+            "bundleStb": "",
+            "addon": "",
+            "dicount": "",
+            "field": "Cable Contract End Date",
+            "value": "13/03/2022"
+        }
+    },
+  "AGC": {
+        "CR12738_TS_122": {
+            "icoms_acc_nbr": "44875802",
+            "site_id": "12",
+            "agc": "VMACN32",
+            "agcText": [
+                "Health and Safety Action – This customer has a Health and Safety flag on their account meaning Engineer Installs are currently restricted in ICOMS",
+                "1. When proceeding to Bundle Negotiator please bear in mind you can only book a QuickStart in ICOMS if the customer requires new equipment. 2. Any Upgrades / Downspins / Disconnections / QuickStarts can be catered for BAU. 3. If a service is non-serviceable, please check the SS screen in ICOMS to confirm. For non-serviceable services flagged as ‘HS’, your TM should raise an incident in the RightNow portal as these should now be serviceable.",
+                "Resolved"
+            ]
+        },
+        "TS_12618_58": {
+            "icoms_acc_nbr": "803674601",
+            "site_id": "18",
+            "target_site_id": "18",
+            "target_premise_id": "8280513",
+            "agc": "VMGUI35MT",
+            "agcText": [
+                "Customer has shown an interest in Sky Sports; attempt X-sell to Sky Sports as part of move.",
+                "1. There is something for every sports fan with access to 10 live channels!2. They will also get access to the Sky Sports App, so they can watch their favourite sports on the go.3. Please check the FBI Pack offers on message centre, for all upcoming events.",
+                "Discuss Further",
+                "No Thanks",
+                "Think About It"
+            ]
+        }
+    },
+    "backbookSwaps": {
+        "TC_CR521_01_CR521": {
+            "icoms_acc_nbr": "28174707",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": [
+                "M/200/XL/U",
+                "Maxit TV",
+                "Weekends",
+                "Fixed Offers",
+                "None"
+            ],
+            "select_bundle": "",
+            "bundleStb": "Virgin TV 360 box"
+        },
+        "TC_CR9568_30": {
+            "icoms_acc_nbr": "52611601",
+            "site_id": "12",
+            "target_site_id": "",
+            "target_premise_id": "",
+            "rgus": [
+                "M/200/XL/U",
+                "Mix TV",
+                "Weekends",
+                "Fixed + VM SIM Offers",
+                "Oomph 40GB SIM"
+            ],
+            "select_bundle": "",
+            "bundleStb": "V6 TiVo"
+        }
+    }
+}
