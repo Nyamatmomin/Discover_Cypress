@@ -59,9 +59,9 @@ Cypress.Commands.add('launchCustomerInGAU', (accountId, siteId) => {
 
 
    //SIT 3
-    //cy.visit("http://sipega-kn-t31:7002/prweb/PRWebLDAP1?ext=true&accountId=" + accountId + "&siteId=" + siteId + "&msisdn=null&evoAccountId=null&agentRole=Care&channelld=LPCM&callReason=Test1")
+    //cy.visit("url)
     //SIT 4
-    cy.visit("http://sipega-kn-t41:8080/prweb/PRWebLDAP1/app/NBAVM_/seLTk5M2efOh7CwyW7iT-A*/!STANDARD?ext=true&accountId="+accountId+"&siteId="+siteId+"&msisdn=null&evoAccountId=null&agentRole=Care&channelld=LPCM&callReason=Test1&pzPostData=-1213940924")
+    cy.visit("url")
 
 
 
@@ -85,9 +85,9 @@ Cypress.Commands.add('launchinMovers', (accountId, siteId, targetSiteId, targetP
 
 
    //SIT 3
-    //cy.visit("http://sipega-kn-t31:7002/prweb/PRWebLDAP1/app/default/Ymw7_TM-nosnYo084Q8ASxnE8avPHIz_*/!STANDARD?ext=true&accountId="+accountId+"&siteId="+siteId+"&msisdn=null&evoAccountId=null&channelld=LP&newSiteId="+targetSiteId+"&newPremiseId="+targetPremiseId+"&callReason=Complaint")
+    //cy.visit("url")
     //SIT 4
-    cy.visit("http://sipega-kn-t41:8080/prweb/PRWebLDAP1/app/default/Ymw7_TM-nosnYo084Q8ASxnE8avPHIz_*/!STANDARD?ext=true&accountId="+accountId+"&siteId="+siteId+"&msisdn=null&evoAccountId=null&channelld=LP&newSiteId="+targetSiteId+"&newPremiseId="+targetPremiseId+"&callReason=Complaint")
+    cy.visit("url")
 
 
 
